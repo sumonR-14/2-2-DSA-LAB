@@ -36,6 +36,7 @@ void KMP(string text, string pattern){
     computeLPS(pattern,lps);
     int i=0;
     int j=0;
+    bool found = false;
     while (i<n)
     {
         if(text[i] == pattern[j]){
@@ -44,7 +45,8 @@ void KMP(string text, string pattern){
         }
         if(j==m){
             cout<<"Pattern is found at index : " 
-            <<i-j <<endl;
+            <<i-j+1 <<endl;
+            found = true;
 
             j = lps[j-1];
         }
@@ -56,6 +58,9 @@ void KMP(string text, string pattern){
                 i++;
             }
         }
+    }
+    if(!found){
+        cout<<" pattern is not found";
     }
     
 
