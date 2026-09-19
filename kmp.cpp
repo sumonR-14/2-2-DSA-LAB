@@ -30,6 +30,7 @@ void computeLPS(string pattern,vector<int>& lps){
 void KMP(string text, string pattern){
     int n = text.length();
     int m = pattern.length();
+    if(m==0) return;
 
     vector<int>lps(m);
 
